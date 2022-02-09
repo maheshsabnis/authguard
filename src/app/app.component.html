@@ -1,0 +1,12 @@
+<h1>Role Based Access to WEB API using Angular Guarded Routed</h1>
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" [routerLink]="['/']">Home</a>
+        <a class="nav-item nav-link" [routerLink]="['/administrator']" *ngIf="isAdministrator">Admin</a>
+        <a class="nav-item nav-link" [routerLink]="['/clerk']" *ngIf="isClerk">Clerk</a>
+        <a class="nav-item nav-link" [routerLink]="['/manager']" *ngIf="isManager">Manager</a>
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav>
+<hr>
+<router-outlet></router-outlet>

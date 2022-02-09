@@ -1,0 +1,25 @@
+<h2>Approving Users</h2>
+<table class="table table-bordered table-striped table-dark">
+    <thead>
+        <tr>
+            <th>List of Users</th>
+            <th>List of Roles</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <select class="form-control" [(ngModel)]="userName">
+          <option *ngFor="let u of users" value="{{u.UserName}}">{{u.UserName}}</option>
+        </select>
+            </td>
+            <td>
+                <select class="form-control" [(ngModel)]="roleName">
+          <option *ngFor="let r of roles" value="{{r.Name}}">{{r.Name}}</option>
+        </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<input type="button" value="Approve User" class="btn btn-success" (click)="approveUser()">
